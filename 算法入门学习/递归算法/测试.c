@@ -10,9 +10,10 @@ int fact(int n)
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
-    char str[4] = "qwer";
-    printf("%ld\n", ARRAY_LENGTH(arr));
+    char str[9] = "肖伊明";
     printf("%ld\n", ARRAY_LENGTH(str));
+    printf("%ld\n", ARRAY_LENGTH(arr));
+    printf("%ld\n", sizeof(str));
 
     printf("%d\n", fact(5));
 

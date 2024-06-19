@@ -65,6 +65,7 @@ void sortArr()
     printf("排序后数组:");
     showDate(arr, arrSize);
 }
+
 void findLetter(char *str, int strSize)
 {
     int low = 0;
@@ -92,6 +93,7 @@ void findLetter(char *str, int strSize)
     }
     printf("大写:%d\n小写:%d\n其他:%d\n", sup, low, other);
 }
+
 // 返回 数组中和为 target 的数组元素下标
 void findIndex(int *arr, int target, int arrSize)
 {
@@ -104,6 +106,7 @@ void findIndex(int *arr, int target, int arrSize)
         }
     }
 }
+
 void replaceSpace(char *str)
 {
     int spaceCount = 0;
@@ -137,6 +140,7 @@ void replaceSpace(char *str)
         }
     }
 }
+
 int main()
 {
     // 查找最大元素
