@@ -1,7 +1,8 @@
 #include <stdio.h>
-
+#include <time.h>
 void caseConversionint(char *str_1, char *str_2, int strSize)
 {
+
     // str_1 是原数组 str_2是赋值后的数组
     for (int i = 0; i < strSize; i++)
     {
@@ -14,6 +15,10 @@ void caseConversionint(char *str_1, char *str_2, int strSize)
         {
             *str_2 = *str_1 - 32;
         }
+        else
+        {
+            *str_2 = *str_1;
+        }
         // 循环完之后进行++ 自增
         str_1++;
         str_2++;
@@ -21,10 +26,25 @@ void caseConversionint(char *str_1, char *str_2, int strSize)
 }
 int main()
 {
-    char a[9] = "QWERabcd";
+    char a[11] = "\0";
     int size = sizeof(a) / sizeof(char);
-    char b[9];
+    srand(time(0));
+
+    for (int i = 0; i < size; i++)
+    {
+        a[i] = 36 + (rand() % 90); // 生成ASCII值为33到122之间的随机字符
+    }
+    a[size - 1] = '\0'; // 添加字符串结尾的空字符
+    char b[11] = "\0";
     caseConversionint(a, b, size);
+    int j = 0;
+    while (a[j] != '\0')
+    {
+        printf("%c", a[j]);
+        j++;
+    }
+    printf("\n");
+
     int i = 0;
     while (b[i] != '\0')
     {
@@ -32,5 +52,6 @@ int main()
         i++;
     }
     printf("\n");
+
     return 0;
 }
