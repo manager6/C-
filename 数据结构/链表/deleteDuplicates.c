@@ -52,9 +52,3 @@ struct ListNode *deleteDuplicates(struct ListNode *head)
         }
     }
 }
-
-int main()
-{
-
-    return 0;
-}
