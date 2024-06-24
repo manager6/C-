@@ -93,6 +93,31 @@ int peek(MyStack *stack)
     return stack->top->data;
 }
 
+/*
+int isValid(char *s)
+{
+    int i = 0;
+    Stack stack;
+    initStack(&stack);
+
+    while (s[i])
+    {
+        if (s[i] == '{' || s[i] == '(' || s[i] == '[')
+            push(&stack, s[i]);
+        else if (s[i] == '}' || s[i] == ')' || s[i] == ']')
+        {
+            if (isEmpty(&stack))
+                return 0;
+            else if (!isMatchingPair(pop(&stack), s[i]))
+                return 0;
+        }
+        i++;
+    }
+
+    return isEmpty(&stack);
+}
+*/
+
 // 释放栈空间
 void freeStack(MyStack *stack)
 {
