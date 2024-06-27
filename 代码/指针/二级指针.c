@@ -8,11 +8,6 @@ void swap(int **a, int **b)
 int main()
 {
 
-    /* int a = 10;
-    int *p = &a;
-    int **q = &p;
-    printf("%p\n%p\n%p\n", &a, &p, q); */
-
     int a = 10;
     int b = 20;
     int *p = &a;
