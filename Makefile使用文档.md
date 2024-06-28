@@ -9,7 +9,7 @@
 一个简单的 `Makefile` 的基本结构如下：
 
 ```
-makefile复制代码target: dependencies
+target: dependencies
     command
 ```
 
@@ -30,7 +30,7 @@ makefile复制代码target: dependencies
 `main.c`:
 
 ```
-c复制代码#include <stdio.h>
+#include <stdio.h>
 #include "functions.h"
 
 int main() {
@@ -42,7 +42,7 @@ int main() {
 `functions.c`:
 
 ```
-c复制代码#include "functions.h"
+#include "functions.h"
 
 int add(int a, int b) {
     return a + b;
@@ -52,7 +52,7 @@ int add(int a, int b) {
 `functions.h`:
 
 ```
-c复制代码#ifndef FUNCTIONS_H
+#ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
 int add(int a, int b);
@@ -65,7 +65,7 @@ int add(int a, int b);
 我们可以为这个程序创建一个简单的 `Makefile`：
 
 ```
-makefile复制代码# 定义编译器
+makefile# 定义编译器
 CC = gcc
 
 # 定义编译器选项
@@ -102,7 +102,6 @@ clean:
 
 ```
 sh
-复制代码
 $ make
 ```
 
@@ -112,7 +111,6 @@ $ make
 
 ```
 sh
-复制代码
 $ make clean
 ```
 
@@ -139,7 +137,7 @@ $ make clean
 #### 6.2 示例
 
 ```
-makefile复制代码# 生成 .o 文件的规则
+makefile# 生成 .o 文件的规则
 %.o: %.c
     $(CC) $(CFLAGS) -c $< -o $@
 ```
@@ -149,7 +147,7 @@ makefile复制代码# 生成 .o 文件的规则
 可以使用变量来简化 `Makefile`，例如：
 
 ```
-makefile复制代码# 定义源文件
+makefile# 定义源文件
 SRCS = main.c functions.c
 
 # 定义生成的目标文件
@@ -161,7 +159,7 @@ OBJS = $(SRCS:.c=.o)
 为了管理复杂的依赖关系，可以使用自动生成的依赖文件。
 
 ```
-makefile复制代码# 生成依赖文件
+makefile# 生成依赖文件
 .deps: $(SRCS)
     $(CC) -MM $^ > .deps
 
@@ -178,7 +176,7 @@ makefile复制代码# 生成依赖文件
 假设你有一个项目目录结构如下：
 
 ```
-css复制代码project/
+project/
 ├── main.c
 ├── functions.c
 ├── functions.h
