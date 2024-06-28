@@ -65,7 +65,7 @@ int add(int a, int b);
 我们可以为这个程序创建一个简单的 `Makefile`：
 
 ```
-makefile# 定义编译器
+# 定义编译器
 CC = gcc
 
 # 定义编译器选项
@@ -137,7 +137,7 @@ $ make clean
 #### 6.2 示例
 
 ```
-makefile# 生成 .o 文件的规则
+# 生成 .o 文件的规则
 %.o: %.c
     $(CC) $(CFLAGS) -c $< -o $@
 ```
@@ -147,7 +147,7 @@ makefile# 生成 .o 文件的规则
 可以使用变量来简化 `Makefile`，例如：
 
 ```
-makefile# 定义源文件
+# 定义源文件
 SRCS = main.c functions.c
 
 # 定义生成的目标文件
@@ -159,7 +159,7 @@ OBJS = $(SRCS:.c=.o)
 为了管理复杂的依赖关系，可以使用自动生成的依赖文件。
 
 ```
-makefile# 生成依赖文件
+# 生成依赖文件
 .deps: $(SRCS)
     $(CC) -MM $^ > .deps
 
@@ -186,7 +186,7 @@ project/
 在 `project` 目录下，创建一个名为 `Makefile` 的文件，并将以下内容粘贴进去：
 
 ```
-makefile复制代码CC = gcc
+CC = gcc
 CFLAGS = -Wall -g
 TARGET = main
 SRCS = main.c functions.c
