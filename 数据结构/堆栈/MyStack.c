@@ -28,7 +28,6 @@
 // 创建栈节点数据
 typedef struct Node
 {
-
     int data;
     struct Node *next;
 } Node;
@@ -143,6 +142,5 @@ int main()
     printf("栈顶元素: %d\n", peek(stack)); // 输出 10
 
     freeStack(stack);
-    return 0;
     return 0;
 }
