@@ -1,20 +1,22 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-struct Student
+struct student
 {
     char name[50];
     int age;
     float height;
-} student1, student2;
+};
 
 int main()
 {
-    struct Student student1 =
-        {
-            .name = "Tom",
-            .age = 22,
-            .height = 1.7};
-    student2 = student1;
-    printf("%s %d %f\n", student2.name, student1.age, student1.height);
+    struct student *s1 = (struct student *)malloc(sizeof(struct student));
+    strcpy(s1->name, "tom");
+    s1->age = 20;
+    s1->height = 1.7;
+
+    printf("name:\t%s\nage:\t%d\nheight:\t%f\n", s1->name, s1->age, s1->height);
+    free(s1);
     return 0;
 }

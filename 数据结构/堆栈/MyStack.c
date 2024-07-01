@@ -26,14 +26,14 @@
 // 基于链表结构
 
 // 创建栈节点数据
-typedef struct Node
+typedef struct
 {
     int data;
     struct Node *next;
 } Node;
 
 // 创建栈结构体
-typedef struct MyStack
+typedef struct
 {
     Node *top;
     int size;
